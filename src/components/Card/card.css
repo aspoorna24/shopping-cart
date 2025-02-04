@@ -1,0 +1,54 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 400px;
+    background-color: white;
+   margin: 15px;
+   padding: 5px;
+   border: 1px solid rgb(215, 215, 215);
+   border-radius: 5px;
+
+}
+
+.card img{
+    width: 100px;
+    height: 100px;
+    padding: 2px;
+    
+}
+
+.category{
+    color: gray;
+
+}
+
+.card h4{
+    white-space: nowrap;
+    overflow: hidden;
+    width: 380px; /* Adjust as needed */ 
+    padding: 5px;
+}
+
+.card .desc{
+   text-align: justify;
+ 
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limits to 4 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 2px;
+   
+}
+
+.card button{
+    background-color: rgb(88, 198, 88);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    border: 1px solid rgb(215, 215, 215);
+    cursor: pointer;
+}
