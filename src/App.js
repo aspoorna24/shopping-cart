@@ -23,23 +23,27 @@ function App() {
       },2000);
       return;
     }
+    item.quantity = 1;
     setCart([...cart, item]);
     
   }
  
-  const handleProductQuantity = (item,data) =>{
-     let ind = -1;
-     cart.forEach((data,index)=>{
-      if(data.id === item.id){
-        ind = index;
-      }
-     })
-     const tempArray = cart;
-     tempArray[ind].amount += data;
-     if (tempArray[ind].amount === 0){
-      tempArray[ind].amount = 1;
-     }
-     setCart([...tempArray]);
+  const handleProductQuantity = (item,count) =>{
+   if(item.quantity === 0)
+   {
+    const newCart = cart.filter(product => product.id !== item.id);
+    setCart(newCart);
+   }
+    if(item.quantity >= 1){
+   if(count === +1){
+    item.quantity += 1;
+   }
+   else{
+    item.quantity -= 1;
+   }
+   setCart([...cart]);
+  }
+   
   }
 
   return (

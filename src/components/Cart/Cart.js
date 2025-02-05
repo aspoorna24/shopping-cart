@@ -5,7 +5,7 @@ const Cart = ({cart,setCart,handleProductQuantity}) => {
   const hadlePrice = () => {
     let totalAmount = 0;
     cart.map(item =>{
-      totalAmount += item.price;
+      totalAmount += item.price*item.quantity;
     })
     setPrice(totalAmount);
 
@@ -33,7 +33,7 @@ const Cart = ({cart,setCart,handleProductQuantity}) => {
         </div>
         <div>
           <button onClick={() =>handleProductQuantity(item,+1)}>+</button>
-          <button>1</button>
+          <button>{item.quantity}</button>
           <button onClick={() =>handleProductQuantity(item,-1)}>-</button>  
 
         </div>
